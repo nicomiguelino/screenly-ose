@@ -156,7 +156,7 @@ sudo sed -i 's/apt.screenlyapp.com/archive.raspbian.org/g' /etc/apt/sources.list
 sudo apt update -y
 sudo apt-get purge -y python-setuptools python-pip python-pyasn1
 sudo apt-get install -y python-dev git-core libffi-dev libssl-dev
-curl -s https://bootstrap.pypa.io/get-pip.py | sudo python
+curl -s https://bootstrap.pypa.io/pip/2.7/get-pip.py | sudo python
 
 if [ "$NETWORK" == 'y' ]; then
   export MANAGE_NETWORK=true
@@ -166,6 +166,9 @@ else
 fi
 
 sudo pip install ansible==2.8.2
+
+REPOSITORY=https://github.com/nicomiguelinnicomiguelinoAnthias.git
+BRANCH='v0.18.3'
 
 sudo -u pi ansible localhost -m git -a "repo=$REPOSITORY dest=/home/pi/screenly version=$BRANCH"
 cd /home/pi/screenly/ansible
