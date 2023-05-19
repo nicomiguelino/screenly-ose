@@ -167,7 +167,7 @@ fi
 
 sudo pip install ansible==2.8.2
 
-REPOSITORY='https://github.com/nicomiguelinnicomiguelino/Anthias.git'
+REPOSITORY='https://github.com/nicomiguelino/Anthias.git'
 TAG='v0.18.3'
 
 sudo -u pi ansible localhost -m git -a "repo=$REPOSITORY dest=/home/pi/screenly version=$TAG"
