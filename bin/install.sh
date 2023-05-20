@@ -186,7 +186,7 @@ sudo pip install "$ANSIBLE_VERSION"
 
 sudo -u ${USER} ansible localhost \
     -m git \
-    -a "repo=$REPOSITORY dest=/home/${USER}/screenly version=$BRANCH force=yes"
+    -a "repo=$REPOSITORY dest=/home/${USER}/screenly version=$BRANCH force=no update=yes"
 cd /home/${USER}/screenly/ansible
 
 sudo -E -u ${USER} ansible-playbook site.yml "${EXTRA_ARGS[@]}"
