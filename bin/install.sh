@@ -175,6 +175,7 @@ sudo -u pi ansible localhost -m git -a "repo=$REPOSITORY dest=/home/pi/screenly 
 cd /home/pi/screenly
 git checkout d12df55
 git branch -D master
+git checkout -b master
 git branch --set-upstream-to=origin/master
 
 cd /home/pi/screenly/ansible
