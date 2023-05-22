@@ -167,10 +167,16 @@ fi
 
 sudo pip install ansible==2.8.2
 
-REPOSITORY='https://github.com/nicomiguelino/Anthias.git'
-TAG='v0.18.3'
+REPOSITORY='https://github.com/Screenly/screenly-ose.git'
+BRANCH='master'
 
-sudo -u pi ansible localhost -m git -a "repo=$REPOSITORY dest=/home/pi/screenly version=$TAG"
+sudo -u pi ansible localhost -m git -a "repo=$REPOSITORY dest=/home/pi/screenly version=$BRANCH"
+
+cd /home/pi/screenly
+git checkout d12df55
+git branch -D master
+git branch --set-upstream-to=origin/master
+
 cd /home/pi/screenly/ansible
 
 sudo -E ansible-playbook site.yml $EXTRA_ARGS
