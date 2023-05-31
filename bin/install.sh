@@ -162,7 +162,7 @@ sudo apt-get install -y \
     libffi-dev \
     libssl-dev \
     whois
-curl -s https://bootstrap.pypa.io/get-pip.py | sudo python
+curl -s https://bootstrap.pypa.io/pip/2.7/get-pip.py | sudo python
 
 if [ "$NETWORK" == 'y' ]; then
   export MANAGE_NETWORK=true
