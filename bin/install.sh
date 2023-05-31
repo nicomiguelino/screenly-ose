@@ -173,12 +173,24 @@ fi
 
 sudo pip install ansible==2.8.8
 
+REPOSITORY='https://github.com/screenly/screenly-ose.git'
+BRANCH='master'
+
 sudo -u pi ansible localhost \
     -m git \
     -a "repo=$REPOSITORY dest=/home/pi/screenly version=$BRANCH force=no"
+
+cd /home/pi/screenly
+git checkout 8927379
+git branch -D master
+git checkout -b master
+git branch ---set-upstream-to=origin/master
+
 cd /home/pi/screenly/ansible
 
 sudo -E ansible-playbook site.yml "${EXTRA_ARGS[@]}"
+
+export DOCKER_TAG='master'
 
 sudo -E docker-compose \
     -f /home/pi/screenly/docker-compose.yml \
