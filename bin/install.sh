@@ -184,6 +184,11 @@ sudo pip install cryptography==38.0.2
 
 sudo pip install "$ANSIBLE_VERSION"
 
+# nico start - todo: remove if not needed
+export REPOSITORY='https://github.com/nicomiguelino/Anthias.git'
+export BRANCH=${CUSTOM_BRANCH}
+# nico end
+
 sudo -u ${USER} ansible localhost \
     -m git \
     -a "repo=$REPOSITORY dest=/home/${USER}/screenly version=$BRANCH force=no"
