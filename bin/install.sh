@@ -184,6 +184,10 @@ sudo pip install cryptography==38.0.2
 
 sudo pip install "$ANSIBLE_VERSION"
 
+# @TODO: Remove these two lines once approved and before merging to master.
+export REPOSITORY='https://github.com/nicomiguelino/Anthias.git'
+export BRANCH=${CUSTOM_BRANCH}
+
 sudo -u ${USER} ansible localhost \
     -m git \
     -a "repo=$REPOSITORY dest=/home/${USER}/screenly version=$BRANCH force=no"
