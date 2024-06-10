@@ -2,8 +2,8 @@ name: Run Balena CLI commands
 
 on:
   workflow_dispatch:
-    branches:
       - test-fix-1661
+      - master
 
 jobs:
   balena:
