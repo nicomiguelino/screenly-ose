@@ -5,6 +5,10 @@ on:
     branches:
       - test-fix-1661
       - master
+    push:
+      branches:
+        - test-fix-1661
+        - master
 
 jobs:
   balena:
