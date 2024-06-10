@@ -5,9 +5,8 @@ on:
     branches:
       - test-fix-1661
       - master
-    push:
+    pull_request:
       branches:
-        - test-fix-1661
         - master
 
 jobs:
