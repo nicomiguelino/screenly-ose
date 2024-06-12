@@ -12,7 +12,7 @@ jobs:
   run-balena-cli-commands:
     runs-on: ubuntu-latest
     steps:
-      - uses: balena-io-experimental/community-cli-action@1.0.0
+      - uses: balena-io-examples/community-cli-action@1.0.0
         with:
           balena_token: ${{ secrets.BALENA_TOKEN }}
           balena_cli_commands: >
