@@ -13,4 +13,4 @@ jobs:
           balena_cli_version: 18.2.2
           balena_cli_commands: >
             whoami;
-            envs --fleet screenly_ose/anthias-${{ matrix.board }} --config;
+            envs --fleet gh_nicomiguelino/anthias-pi3 --config;
