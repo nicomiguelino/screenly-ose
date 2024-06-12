@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - "test-fix-1661"
+# single job
 jobs:
   run-command:
     runs-on: ubuntu-latest
