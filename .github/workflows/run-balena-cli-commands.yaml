@@ -1,0 +1,16 @@
+name: Run Balena CLI commands
+on:
+  push:
+    branches:
+      - "test-fix-1661"
+jobs:
+  run-command:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: balena-io-examples/community-cli-action@1.0.0
+        with:
+          balena_token: ${{ secrets.BALENA_TOKEN }}
+          balena_cli_version: 18.2.2
+          balena_cli_commands: >
+            whoami;
+            envs --fleet screenly_ose/anthias-${{ matrix.board }} --config;
