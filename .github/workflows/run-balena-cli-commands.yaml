@@ -15,4 +15,4 @@ jobs:
           balena_cli_commands: >
             whoami;
             envs --fleet gh_nicomiguelino/anthias-pi3 --config;
-            env add BALENA_HOST_CONFIG_disable_overscan 0 --fleet gh_nicomiguelino/anthias-pi3;
+            env add BALENA_HOST_CONFIG_disable_overscan 1 --fleet gh_nicomiguelino/anthias-pi3;
