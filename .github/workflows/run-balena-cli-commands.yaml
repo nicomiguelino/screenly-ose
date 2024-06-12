@@ -1,6 +1,10 @@
 name: Run Balena CLI commands
 
 on:
+  pull_request:
+  push:
+    branches:
+      - '*'
   workflow_dispatch:
 
 
