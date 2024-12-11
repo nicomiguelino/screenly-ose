@@ -2,6 +2,15 @@
 
 import '../sass/anthias.scss'
 
+import Backbone from 'backbone'
+
+import 'bootstrap'
+import 'jquery-ui/sortable'
+import 'blueimp-file-upload/jquery.fileupload'
+
+# Backbone depends on jQuery
+Backbone.$ = $
+
 $().ready ->
   $('#subsribe-form-container').popover content: get_template 'subscribe-form'
 

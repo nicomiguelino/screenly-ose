@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
     entry: {
@@ -14,6 +15,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "css/anthias.css"
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         })
     ],
     module: {
